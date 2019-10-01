@@ -3,8 +3,7 @@ class Produk {
 	public 	$judul,
 			$penulis,
 			$penerbit,
-			$harga,
-			$waktuMain;
+			$harga;
 
 	public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0){
 		$this->judul = $judul;
@@ -26,9 +25,9 @@ class Produk {
 }
 
 class Game extends produk{
-	public $waktuMain
+	public $waktuMain;
 	public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0, $waktuMain = 0){
-		parent::__construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0)
+		parent::__construct($judul, $penulis, $penerbit, $harga);
 		$this->waktuMain = $waktuMain;
 	}
 
@@ -42,7 +41,7 @@ class Game extends produk{
 class Komik extends Produk{
 	public $jmlHalaman;
 	public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0, $jmlHalaman = 0){
-		parent::__construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0)
+		parent::__construct($judul, $penulis, $penerbit, $harga);
 		$this->jmlHalaman = $jmlHalaman;
 	}
 
