@@ -4,6 +4,10 @@ class Produk {
 			$penulis,
 			$penerbit,
 			$harga;
+
+	public function getLabel(){
+		return "$this->penulis, $this->penerbit";
+	}
 }
 
 $produk1 = new produk();
@@ -13,8 +17,13 @@ $produk1->penerbit = "Shonen Jump";
 $produk1->harga = 25000; 
 var_dump($produk1);
 
-// $produk2 = new produk();
-// $produk-> judul = "Code Vein";
-// $produk2-> tambahProperty = "hahaha";
-// var_dump($produk2);
+$produk4 = new Produk();
+$produk4->judul = "Uncherted";
+$produk4->penulis = "Neil Druckmann";
+$produk4->penerbit = "Sony Computer";
+$harga->harga = 250000;
+
+echo "Komik : " . $produk1->getLabel();
+echo "<br>";
+echo "Game : " . $produk4->getLabel();
  ?>}
