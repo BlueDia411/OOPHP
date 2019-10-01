@@ -27,7 +27,6 @@ class Produk {
 }
 
 class Game extends produk{
-	public $jmlHalaman;
 	public function getInfoProduk(){
 		$str = "Game : " . parent::getInfoProduk() . " ~ {$this->waktuMain} Jam.";
 		return $str;
@@ -36,6 +35,7 @@ class Game extends produk{
 
 
 class Komik extends Produk{
+	public $jmlHalaman;
 	public function getInfoProduk(){
 		$str = "Komik : " . parent::getInfoProduk() . "  - {$this->jmlHalaman} Halaman.";
 		return $str;
