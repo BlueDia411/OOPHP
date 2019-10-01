@@ -2,9 +2,9 @@
 class Produk {
 	private	$judul,
 			$penulis,
-			$penerbit;
-	protected $diskon = 0;
-	private	$harga;
+			$penerbit,
+			$diskon = 0,
+			$harga;
 
 	public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0){
 		$this->judul = $judul;
@@ -39,6 +39,10 @@ class Produk {
 
 	public function setDiskon( $diskon ){
 		$this->diskon = $diskon;
+	}
+
+	public function getDiskon(){
+		return $this->diskon;
 	}
 
 	public function getLabel(){
