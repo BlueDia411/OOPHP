@@ -8,7 +8,7 @@ class Produk {
 			$waktuMain,
 			$tipe;
 
-	public function __construct($judul, $penulis, $penerbit, $harga = 0, $jmlHalaman = 0, $waktuMain = 0, $tipe){
+	public function __construct($judul = "judul", $penulis = "penulis", $penerbit = "penerbit", $harga = 0, $jmlHalaman = 0, $waktuMain = 0, $tipe){
 		$this->judul = $judul;
 		$this->penulis = $penulis;
 		$this->penerbit =$penerbit;
@@ -26,10 +26,11 @@ class Produk {
 
 	public function getInfoLengkap(){
 		$str = "{$this->tipe} : {$this->judul} | {$this->getLabel()} (Rp. {$this->harga})";
+
 		if ($this->tipe == "Komik") {
-			$str .= " - {$this->jmlHalaman} Halaman."
+			$str .= " ~ {$this->jmlHalaman} Halaman.";
 		} else if ($this->tipe == "Game") {
-			$str .= " - {$this->waktuMain} Jam."
+			$str .= " ~ {$this->waktuMain} Jam.";
 		}
 		return $str;
 	}
@@ -46,8 +47,8 @@ class CetakInfoProduk {
 
 
 
-$produk1 = new produk("Naruto", "Masashi Kishimoto", "Shonen Jump", 25000, 100, "Komik");
-$produk2 = new produk("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 50, "Game");
+$produk1 = new produk("Naruto", "Masashi Kishimoto", "Shonen Jump", 25000, 100, 0, "Komik");
+$produk2 = new produk("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 0, 50, "Game");
 
 // echo "Komik : " . $produk1->getLabel();
 // echo "<br>";
