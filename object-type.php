@@ -18,8 +18,8 @@ class Produk {
 }
 
 class CetakInfoProduk {
-	public function cetak( ){
-		$str = "Naruto | Masashi Kishimoto, Shonen Jump (Rp. 25000)"
+	public function cetak( $produk ){
+		$str = "{$produk->judul} | {$produk->getLabel()} ({$produk->harga})"
 	}
 }
 
